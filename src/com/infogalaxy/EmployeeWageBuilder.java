@@ -13,21 +13,28 @@ public class EmployeeWageBuilder {
         Random random = new Random();
         int empAttendance = random.nextInt() % 2;         //Generate the random NO
         System.out.println(empAttendance);
-        if(empAttendance == 0) {
+        if (empAttendance == 0) {
             System.out.println("Employee is Absent");
         } else {
             System.out.println("Employee is Present");
-            //UC-3 Employee Part time or Full Time
+            //UC-4 Employee Part time or Full Time using SWITCH-CASE
             int empType = random.nextInt() % 2;
-            if(empType == 0){
-                System.out.println("Full Time");
-                total_Wage = WAGE_PER_HR * FULL_TIME;
-            } else {
-                System.out.println("Part Time");
-                 total_Wage = WAGE_PER_HR * PART_TIME;
+            switch (empType) {
+                case 0:
+                    System.out.println("Full Time");
+                    total_Wage = WAGE_PER_HR * FULL_TIME;
+                    break;
+                case 1:
+                    System.out.println("Part Time");
+                    total_Wage = WAGE_PER_HR * PART_TIME;
+                    break;
+                default:
+                    System.out.println("Invalid No");
+                    break;
             }
+
         }
-        System.out.println("Total Wage ="+total_Wage);
+        System.out.println("Total Wage =" + total_Wage);
 
     }
 }
